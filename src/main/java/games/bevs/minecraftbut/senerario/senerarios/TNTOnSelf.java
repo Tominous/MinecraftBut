@@ -58,56 +58,56 @@ public class TNTOnSelf extends Senerario
 		
 	}
 	
-//	@Override
-//	protected void onCommand(Player player, String option, String[] args)
-//	{
-//		super.onCommand(player, option, args);
-//		
-//		if(args.length != 1)
-//		{
-//			this.onHelp(player);
-//			player.sendMessage(CC.red + "incorrect number of args");
-//		}
-//		
-//		String firstArg = args[0];
-//		int argAsInt = 0;
-//		if(NumberUtils.isNumber(firstArg))
-//		{
-//			argAsInt = Integer.parseInt(firstArg);
-//		}
-//		else
-//		{
-//			this.onHelp(player);
-//			player.sendMessage(CC.red + "Must be a number");
-//			return;
-//		}
-//		
-//		if(option.equalsIgnoreCase("triggerBelow"))
-//		{
-//			this.triggerBelow = argAsInt;
-//			Console.log("TNT will go off under " + this.triggerBelow);
-//		}
-//		
-//		if(option.equalsIgnoreCase("LavaSpeed"))
-//		{
-//			this.secondsBetweenTNT = argAsInt;
-//			if(this.isEnabled())
-//			{
-//				this.finish();
-//				this.start();
-//			}
-//			Console.log("Tnt will spawn every " + argAsInt + " seconds");
-//			
-//		}
-//	}
+	@Override
+	protected void onCommand(Player player, String option, String[] args)
+	{
+		super.onCommand(player, option, args);
+		
+		if(args.length != 1)
+		{
+			this.onHelp(player);
+			player.sendMessage(CC.red + "incorrect number of args");
+		}
+		
+		String firstArg = args[0];
+		int argAsInt = 0;
+		if(NumberUtils.isNumber(firstArg))
+		{
+			argAsInt = Integer.parseInt(firstArg);
+		}
+		else
+		{
+			this.onHelp(player);
+			player.sendMessage(CC.red + "Must be a number");
+			return;
+		}
+		
+		if(option.equalsIgnoreCase("triggerBelow"))
+		{
+			this.triggerBelow = argAsInt;
+			Console.log("TNT will go off under " + this.triggerBelow);
+		}
+		
+		if(option.equalsIgnoreCase("LavaSpeed"))
+		{
+			this.secondsBetweenTNT = argAsInt;
+			if(this.isEnabled())
+			{
+				this.finish();
+				this.start();
+			}
+			Console.log("Tnt will spawn every " + argAsInt + " seconds");
+			
+		}
+	}
 	
-//	@Override
-//	protected void onHelp(Player player)
-//	{
-//		super.onHelp(player);
-//		
-//		player.sendMessage(withBaseCommand("triggerBelow", "<Y (number)>"));
-//		player.sendMessage(withBaseCommand("secondsBetweenTNT", "<Seconds (number)>"));
-//	}
+	@Override
+	protected void onHelp(Player player)
+	{
+		super.onHelp(player);
+		
+		player.sendMessage(withBaseCommand("triggerBelow", "<Y (number)>"));
+		player.sendMessage(withBaseCommand("secondsBetweenTNT", "<Seconds (number)>"));
+	}
 	
 }
