@@ -296,7 +296,7 @@ public class Senerario implements Listener
 			field = senerario.getClass().getDeclaredField(fieldName);
 			optional = field.getAnnotation(Optional.class);
 		} catch (NoSuchFieldException | SecurityException e) {
-//			e.printStackTrace();//ssssshhh i know baby
+			e.printStackTrace();//ssssshhh i know baby
 		}
 		return optional;
 	}
